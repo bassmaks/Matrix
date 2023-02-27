@@ -51,9 +51,6 @@ int s21_calc_complements(matrix_t *A, matrix_t *result);
 // Обратная матрица (inverse_matrix)
 int s21_inverse_matrix(matrix_t *A, matrix_t *result);
 
-// void diagon(matrix_t A, double *res);
-// void minor_m(matrix_t *Enter, matrix_t *Exit, int row, int column);
-// void mirror(matrix_t *Enter, matrix_t *Exit);
 void minor_m(int row, int column, matrix_t *A, double *result);
 
 #endif  // _SRC_S21_MATRIX_H

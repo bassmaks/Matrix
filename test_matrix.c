@@ -1,6 +1,5 @@
 #include <check.h>
 
-#include "limits.h"
 #include "s21_matrix.h"
 
 void init_matrix_line(int rows, int colums, double mass[], matrix_t *res) {
