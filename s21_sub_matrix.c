@@ -8,7 +8,9 @@
 
 int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
   int res = 0;
-  if (A->rows < 1 || A->columns < 1 || B->rows < 1 || B->columns < 1) {
+  if (A->matrix == NULL || B->matrix == NULL) {
+    res = 1;
+  } else if (A->rows < 1 || A->columns < 1 || B->rows < 1 || B->columns < 1) {
     res = 1;
   } else if (A->rows != B->rows || A->columns != B->columns) {
     res = 2;

@@ -9,7 +9,9 @@ C(i,j) = A(i,1) × B(1,j) + A(i,2) × B(2,j) + … + A(i,k) × B(k,j).
 
 int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
   int res = 0;
-  if (A->rows < 1 || A->columns < 1 || B->rows < 1 || B->columns < 1) {
+  if (A->matrix == NULL || B->matrix == NULL) {
+    res = 1;
+  } else if (A->rows < 1 || A->columns < 1 || B->rows < 1 || B->columns < 1) {
     res = 1;
   } else if (A->columns != B->rows) {
     res = 2;

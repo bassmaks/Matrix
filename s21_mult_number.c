@@ -7,12 +7,13 @@
 */
 
 int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
-  int res = 0;
-  if (A->rows < 1 || A->columns < 1) {
+  int res = 2;
+  if (A->matrix == NULL) {
     res = 1;
-    // } else if (A->rows != result->rows || A->columns != result->columns) {
-    //   res = 2;
+  } else if (A->rows < 1 || A->columns < 1) {
+    res = 1;
   } else {
+    res = 0;
     s21_create_matrix(A->rows, A->columns, result);
     for (int i = 0; i < A->rows; i++) {
       for (int j = 0; j < A->columns; j++)
