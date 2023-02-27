@@ -626,6 +626,37 @@ START_TEST(det_5) {
 }
 END_TEST
 
+START_TEST(det_6) {
+  matrix_t result1;
+  double result2;
+  s21_create_matrix(4, 4, &result1);
+  result1.matrix[0][0] = 1;
+  result1.matrix[0][1] = 0;
+  result1.matrix[0][2] = 0;
+  result1.matrix[0][3] = 22;
+
+  result1.matrix[1][0] = 22;
+  result1.matrix[1][1] = 1;
+  result1.matrix[1][2] = 0;
+  result1.matrix[1][3] = 0;
+
+  result1.matrix[2][0] = 0;
+  result1.matrix[2][1] = 22;
+  result1.matrix[2][2] = 1;
+  result1.matrix[2][3] = 0;
+
+  result1.matrix[3][0] = 0;
+  result1.matrix[3][1] = 0;
+  result1.matrix[3][2] = 22;
+  result1.matrix[3][3] = 1;
+
+  double expected_result = -234255;
+  s21_determinant(&result1, &result2);
+  ck_assert_ldouble_eq(expected_result, result2);
+  s21_remove_matrix(&result1);
+}
+END_TEST
+
 START_TEST(inv_err) {
   matrix_t matrix_00;
   matrix_t matrix_01;
@@ -782,6 +813,7 @@ int main() {
   tcase_add_test(tc, det_3);
   tcase_add_test(tc, det_4);
   tcase_add_test(tc, det_5);
+  tcase_add_test(tc, det_6);
   tcase_add_test(tc, inv_err);
   tcase_add_test(tc, inv_2);
   tcase_add_test(tc, inv_3);
