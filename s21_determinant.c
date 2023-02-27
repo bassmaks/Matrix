@@ -8,7 +8,6 @@
 
 int s21_determinant(matrix_t *A, double *result) {
   int res = 0;
-  //*result = 0;
   if (A->rows < 1 || A->columns < 1) {
     res = 1;
   } else if (A->rows != A->columns) {
