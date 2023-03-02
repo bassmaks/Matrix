@@ -8,11 +8,11 @@ FLAGS=-Wall -Werror -Wextra -std=c11
 S21_MATRIX=-L. s21_matrix.a
 DEBUG =-g
 CTESTFLAGS=-lcheck -lm -lpthread 
-TEST = test_matrix.c
+TEST = ttt.c
 LIBRARY = s21_matrix.a
 
 
-all: clean $(LIBRARY) test gcov_report
+all: clean $(LIBRARY) gcov_report
 
 # $(TARGET): s21_matrix.o
 # 	$(CC) s21_matrix.o -o $(TARGET)
