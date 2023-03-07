@@ -8,7 +8,7 @@ FLAGS=-Wall -Werror -Wextra -std=c11
 S21_MATRIX=-L. s21_matrix.a
 DEBUG =-g
 CTESTFLAGS=-lcheck -lm -lpthread 
-TEST = ttt.c
+TEST = test.c
 LIBRARY = s21_matrix.a
 
 
